@@ -1,3 +1,5 @@
+const Header = require('../blocks/Header');
+
 class Base {
   constructor(path) {
     this.path = path;
@@ -5,6 +7,10 @@ class Base {
 
   load(path) {
     browser.url(path);
+  }
+
+  get header() {
+    return new Header($("[data-qa-id='site-header']"));
   }
 }
 

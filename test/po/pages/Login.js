@@ -1,4 +1,5 @@
 const Base = require('./Base');
+const {user} = require('../../fixtures/const');
 
 class Login extends Base {
 
@@ -22,9 +23,9 @@ class Login extends Base {
     return $(".error-messages");
   }
 
-  login(email, password) {
-    this.email.setValue(email);
-    this.password.setValue(password);
+  login(obj = user) {
+    this.email.setValue(obj.email);
+    this.password.setValue(obj.password);
     this.submitButton.click();
 
     browser.waitUntil(() => {
