@@ -16,18 +16,17 @@ class Login extends Base {
   }
 
   get submitButton() {
-    return $(".btn");
+    return $(".auth-page .btn");
   }
 
   get errorMessage() {
-    return $(".error-messages");
+    return $(".auth-page .error-messages");
   }
 
   authenticate(obj = user) {
     this.email.setValue(obj.email);
     this.password.setValue(obj.password);
     this.submitButton.click();
-
     browser.waitUntil(() => {
       const errorDisplayed = this.errorMessage.isDisplayed();
       const submitDisplayed = this.submitButton.isDisplayed();

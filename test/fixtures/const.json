@@ -2,5 +2,11 @@
   "user": {
     "email": "admin@test.com",
     "password": "password"
+  },
+  "article": {
+    "title": "My new title",
+    "description": "My test description",
+    "body": "This is a test article where I try to submit one",
+    "tags": ["tag1", "tag2", "tag3"]
   }
 }
