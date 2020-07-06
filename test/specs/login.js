@@ -1,4 +1,5 @@
-const login = require('../po/pages/Login');
+const Login = require('../po/pages/Login');
+const login = new Login();
 
 describe('Conduit Login Page test suite', () => {
   beforeEach(() => {

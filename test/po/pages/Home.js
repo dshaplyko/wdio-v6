@@ -7,4 +7,4 @@ class Home extends Base {
   }
 }
 
-module.exports = new Home();
+module.exports = Home;

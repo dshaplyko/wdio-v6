@@ -7,4 +7,4 @@ class Editor extends Base {
   }
 }
 
-module.exports = new Editor();
+module.exports = Editor;

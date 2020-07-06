@@ -38,4 +38,4 @@ class Login extends Base {
   }
 }
 
-module.exports = new Login();
+module.exports = Login;
