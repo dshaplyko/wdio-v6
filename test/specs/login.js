@@ -1,8 +1,8 @@
-const {getPage} = require('../po/pages');
+const app = require('../po/pages');
 
 describe('Conduit Login Page test suite', () => {
   beforeEach(() => {
-    getPage('login').load();
+    app.login.load();
   });
 
   it('should have the right title', () => {
@@ -11,24 +11,24 @@ describe('Conduit Login Page test suite', () => {
   });
 
   it('should login with valid credentials', () => {
-    getPage('login').login();
+    app.login.login();
     expect(browser.getUrl()).not.toContain('login');
   });
 
   it('should not login when email is empty', () => {
-    getPage('login').login({
+    app.login.login({
       email: "",
       password: "admin"
     });
-    expect(getPage('login').errorMessage.getText()).toEqual("email can't be blank");
+    expect(app.login.errorMessage.getText()).toEqual("email can't be blank");
   });
 
   it('should not login when password is empty', () => {
-    getPage('login').login({
+    app.login.login({
       email: "admin@test.com",
       password: ""
     });
-    expect(getPage('login').errorMessage.getText()).toEqual("password can't be blank");
+    expect(app.login.errorMessage.getText()).toEqual("password can't be blank");
   });
 
 });

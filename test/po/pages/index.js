@@ -1,19 +1,13 @@
 const HomePage = require('./Home');
 const LoginPage = require('./Login');
+class App {
+  get home() {
+    return new HomePage();
+  }
 
-/**
- * @param name {'Home'|'home'|'Docs'|'docs'}
- * @return {BasePage}
- */
-const getPage = name => {
-  const page = {
-    home: HomePage,
-    login: LoginPage
-  };
+  get login() {
+    return new LoginPage();
+  }
+}
 
-  return new page[name.toLowerCase()]();
-};
-
-module.exports = {
-  getPage
-};
+module.exports = new App();
