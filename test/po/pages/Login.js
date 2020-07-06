@@ -23,7 +23,7 @@ class Login extends Base {
     return $(".error-messages");
   }
 
-  login(obj = user) {
+  authenticate(obj = user) {
     this.email.setValue(obj.email);
     this.password.setValue(obj.password);
     this.submitButton.click();

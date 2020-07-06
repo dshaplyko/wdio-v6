@@ -11,12 +11,12 @@ describe('Conduit Login Page test suite', () => {
   });
 
   it('should login with valid credentials', () => {
-    app.login.login();
+    app.login.authenticate();
     expect(browser.getUrl()).not.toContain('login');
   });
 
   it('should not login when email is empty', () => {
-    app.login.login({
+    app.login.authenticate({
       email: "",
       password: "admin"
     });
@@ -24,7 +24,7 @@ describe('Conduit Login Page test suite', () => {
   });
 
   it('should not login when password is empty', () => {
-    app.login.login({
+    app.login.authenticate({
       email: "admin@test.com",
       password: ""
     });

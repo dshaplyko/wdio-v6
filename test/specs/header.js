@@ -14,7 +14,7 @@ describe('Header test suite', () => {
   });
 
   it('should contain all needed elements for logged in users', () => {
-    app.login.login();
+    app.login.authenticate();
     expect(app.login.header.logo.isDisplayed()).toEqual(true);
     expect(app.login.header.homeButton.isDisplayed()).toEqual(true);
     expect(app.login.header.signInButton.isDisplayed()).toEqual(false);
