@@ -24,6 +24,7 @@ class Login extends Base {
   }
 
   authenticate(obj = user) {
+    this.load();
     this.email.setValue(obj.email);
     this.password.setValue(obj.password);
     this.submitButton.click();

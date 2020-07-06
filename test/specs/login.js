@@ -1,11 +1,9 @@
 const app = require('../po/pages');
 
 describe('Conduit Login Page test suite', () => {
-  beforeEach(() => {
-    app.login.load();
-  });
-
+  
   it('should have the right title', () => {
+    app.login.load();
     expect(browser).toHaveTitle('Conduit');
     expect(browser.getUrl()).toContain('login');
   });

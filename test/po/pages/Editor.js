@@ -28,6 +28,7 @@ class Editor extends Base {
   }
 
   submitArticle(obj = article) {
+    this.load();
     this.title.setValue(obj.title);
     this.description.setValue(obj.description);
     this.body.setValue(obj.body);

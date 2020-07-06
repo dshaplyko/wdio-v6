@@ -4,7 +4,7 @@
   "description": "Test project for wdio v6 learning",
   "main": "index.js",
   "scripts": {
-    "test": "wdio wdio.conf.js"
+    "test": "node_modules/.bin/wdio wdio.conf.js"
   },
   "repository": {
     "type": "git",
