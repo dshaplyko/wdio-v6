@@ -22,6 +22,9 @@ exports.config = {
     suites: {
         header: [
             "./test/specs/header.js"
+        ],
+        editor: [
+            "./test/specs/editor.js"
         ]
     },
     // Patterns to exclude.

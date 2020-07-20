@@ -1,8 +1,7 @@
 {
   "name": "wdio-v6",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test project for wdio v6 learning",
-  "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/wdio wdio.conf.js"
   },
@@ -12,7 +11,8 @@
   },
   "author": "dmitryshaplyko@gmail.com",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
+    "chance": "^1.1.6",
     "@wdio/cli": "^6.1.23",
     "@wdio/local-runner": "^6.1.23",
     "@wdio/mocha-framework": "^6.1.19",
