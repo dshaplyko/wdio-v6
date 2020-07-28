@@ -37,7 +37,6 @@ class Editor extends Base {
       browser.keys('Enter');
     });
     this.publishButton.click();
-    $('.article-page').waitForExist();
   }
 }
 

@@ -1,6 +1,6 @@
 {
   "name": "wdio-v6",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Test project for wdio v6 learning",
   "scripts": {
     "test": "node_modules/.bin/wdio wdio.conf.js"
