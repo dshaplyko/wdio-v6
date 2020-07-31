@@ -1,7 +1,5 @@
 const app = require('../po/pages');
 const {deleteArticles} = require('../fixtures/helpers');
-const Chance = require('chance');
-const chance = new Chance();
 
 describe('Editor Page test suite', () => {
 
@@ -42,6 +40,17 @@ describe('Editor Page test suite', () => {
     expect(app.article.title.getText()).toEqual(chanceArticle.title);
     expect(app.article.body.getText()).toEqual(chanceArticle.body);
     expect(app.article.tagsText).toEqual(chanceArticle.tags);
+  });
+
+});
+
+describe('Editor Page: Unsaved changes', () => {
+
+  it('Leaving unsaved changes', () => {
+    app.editor.load();
+    app.editor.title.setValue('Some changes');
+    app.editor.header.homeButton.click();
+    expect(app.editor.getAlertText()).toContain('You have unsaved changes!');
   });
 
 });

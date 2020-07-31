@@ -12,6 +12,10 @@ class Base {
   get header() {
     return new Header($("[data-qa-id='site-header']"));
   }
+
+  getAlertText() {
+    return browser.getAlertText();
+  }
 }
 
 module.exports = Base;
