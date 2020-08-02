@@ -15,6 +15,14 @@ class Home extends Base {
     return new Article($$("[data-qa-type='article-preview']"));
   }
 
+  get feedTabs() {
+    return $$("[data-qa-id='feed-tabs'] [data-qa-type='feed-tab']");
+  }
+
+  get feedTabsText() {
+    return this.feedTabs.map(tab => tab.getText());
+  }
+
 }
 
 module.exports = Home;

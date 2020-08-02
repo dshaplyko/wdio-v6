@@ -1,4 +1,5 @@
 const Header = require('../blocks/Header');
+const Footer = require('../blocks/Footer');
 
 class Base {
   constructor(path) {
@@ -11,6 +12,10 @@ class Base {
 
   get header() {
     return new Header($("[data-qa-id='site-header']"));
+  }
+
+  get footer() {
+    return new Footer($("[data-qa-id='site-footer']"));
   }
 
   getAlertText() {
