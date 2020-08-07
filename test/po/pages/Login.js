@@ -36,10 +36,6 @@ class Login extends Base {
       timeoutMsg: 'The sign in button is not gone and an error never appeared'
     });
   }
-
-  clearSession() {
-    browser.execute(() => window.localStorage.clear());
-  }
 }
 
 module.exports = Login;

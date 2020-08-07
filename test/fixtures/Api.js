@@ -1,19 +1,29 @@
-const got = require('got');
-
+const fetch = require('node-fetch');
+const {user} = require('./const');
 class Api {
-  constructor(prefixUrl) {
-    this.client = got.extend({
-      prefixUrl,
-      responsType: 'json'
-    });
+  constructor(baseUrl) {
+    this.baseUrl = baseUrl;
   }
 
-  getAuthToken({email, password}) {
-    return this.client
-        .post('users/login', {
-          json: {email, password}
-        })
-        .then(response => response.body.user.token);
+  loginRequest(email, password) {
+    
+    const requestBody = {
+      user: {
+        email: email || user.email,
+        password: password || user.password
+      }
+    };
+
+    return fetch(`${this.baseUrl}users/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    })
+    .then(response => response.json())
+    .then(data => data.user.token)
+    .catch(err => console.log(err) );
   }
 }
 

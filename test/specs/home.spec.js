@@ -4,8 +4,12 @@ describe('Home Page', () => {
 
   describe('Logged in', () => {
 
-    before(() => app.login.authenticate());
-    after(() => app.login.clearSession());
+    before(() => {
+      browser.loginViaApi();
+      app.home.load();
+    });
+    
+    after(() => browser.clearSession());
 
     it('should show the both feeds', () => {
       expect(app.home.feedTabsText).toEqual(['Your Feed', 'Global Feed']);

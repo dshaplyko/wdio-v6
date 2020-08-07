@@ -3,7 +3,7 @@ const {deleteArticles} = require('../fixtures/helpers');
 
 describe('Editor Page test suite', () => {
 
-  before(() => app.login.authenticate());
+  before(() => browser.loginViaApi());
   after(() => deleteArticles());
 
   it('editor page should contain all needed items', () => {

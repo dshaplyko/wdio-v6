@@ -1,6 +1,6 @@
 {
   "name": "wdio-v6",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Test project for wdio v6 learning",
   "scripts": {
     "test": "node_modules/.bin/wdio wdio.conf.js"
@@ -19,7 +19,7 @@
     "@wdio/sync": "^6.1.14",
     "chance": "^1.1.6",
     "chromedriver": "^83.0.0",
-    "got": "^11.5.1",
+    "node-fetch": "^2.6.0",
     "wdio-chromedriver-service": "^6.0.3"
   }
 }
