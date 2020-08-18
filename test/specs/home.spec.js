@@ -12,9 +12,16 @@ describe('Home Page', () => {
     after(() => browser.clearSession());
 
     it('should show the both feeds', () => {
+      expect(app.home.activeFeedTabText).toEqual(['Global Feed']);
       expect(app.home.feedTabsText).toEqual(['Your Feed', 'Global Feed']);
-      expect(app.home.feedTabsText).toContain('Your Feed');
-      expect(app.home.feedTabsText).toContain('Global Feed');
+    });
+
+    it('should let you switch between tabs', () => {
+      app.home.clickTab('Global Feed');
+      expect(app.home.activeFeedTabText).toEqual(['Global Feed']);
+
+      app.home.clickTab('Your Feed');
+      expect(app.home.activeFeedTabText).toEqual(['Your Feed']);
     });
 
   });
@@ -29,6 +36,7 @@ describe('Home Page', () => {
     });
 
     it('should show the global feed tab', () => {
+      expect(app.home.activeFeedTabText).toEqual(['Global Feed']);
       expect(app.home.feedTabsText).toEqual(['Global Feed']);
     });
 
