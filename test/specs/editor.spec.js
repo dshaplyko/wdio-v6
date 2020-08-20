@@ -1,10 +1,9 @@
 const app = require('../po/pages');
-const {deleteArticles} = require('../fixtures/helpers');
 
 describe('Editor Page test suite', () => {
 
   before(() => browser.loginViaApi());
-  after(() => deleteArticles());
+  after(() => browser.deleteArticles());
 
   it('editor page should contain all needed items', () => {
     app.editor.load();

@@ -1,5 +1,5 @@
 const Base = require('./Base');
-const Article = require('../blocks/Article');
+const Feed = require('../blocks/Feed');
 class Home extends Base {
 
   load() {
@@ -8,11 +8,6 @@ class Home extends Base {
 
   get home() {
     return $(".home-global");
-  }
-
-  get articles() {
-    this.home.waitForExist();
-    return new Article($$("[data-qa-type='article-preview']"));
   }
 
   get feedTabs() {
@@ -28,15 +23,15 @@ class Home extends Base {
     return filtered.map(item => item.getText());
   }
 
-  get loadingIndicator() {
-    return $("[data-qa-id='article-loading-indicator']");
+  get currentFeed() {
+    return new Feed($('[data-qa-type="article-list"]'));
   }
 
   clickTab(tabText) {
     const tabToClick = this.feedTabs.find(tab => tab.getText() === tabText);
     tabToClick.click();
     browser.waitUntil(() => this.activeFeedTabText[0] === tabText);
-    this.loadingIndicator.waitForExist({ reverse: true });
+    this.currentFeed.waitForLoad();
   }
 
 }

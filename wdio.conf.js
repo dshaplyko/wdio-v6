@@ -1,6 +1,4 @@
-const {
-	Chance
-} = require("chance");
+const {Chance} = require("chance");
 const Api = require('./test/fixtures/Api');
 
 exports.config = {
@@ -202,6 +200,10 @@ exports.config = {
 
 		browser.addCommand('clearSession', () => {
 			browser.execute(() => window.localStorage.clear());
+		});
+
+		browser.addCommand('deleteArticles', () => {
+			browser.call(() => api.deleteArticles('dshaplyko'));
 		});
 	},
 	/**
